@@ -4,7 +4,7 @@ img{
 }
 
 h1{
-    float: left;
+    float: right;
     margin-top: 19px;
 }
 
@@ -14,6 +14,7 @@ h1{
 
 .navbar-brand{
     font-size: 50px;
+    float: right;
 }
 
 a{
