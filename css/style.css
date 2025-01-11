@@ -1,13 +1,54 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital@1&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Audiowide&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Audiowide&family=Quantico:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Wallpoet&display=swap');
 img{
     float: left;
+}
+
+#titulo_pagina{
+    font-family: "Audiowide", serif;
 }
 
 h1{
     float: right;
     margin-top: 19px;
 }
+body{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh
+}
+#boton{
+    position: relative;
+    top: 540px;
+    left: 470px;
+}
+#titulo_producto{
+    position: relative;
+    top: 81px;
+    left: -127px;
+    font-size: 50px;
 
+}
+#precio{
+    text-align: right;
+    position: relative;
+    top: 300px;
+    font-size: xxx-large;
+}
+
+.nav-item{
+    font-family: "Wallpoet", serif;
+    font-weight: 200;
+    font-size: larger;
+    padding: 40px;
+}
+#titulo{
+    text-align: center;
+    font-family: "Luckiest Guy", serif;
+}
 .container-fluid{
     background-color: red;
 }
@@ -26,13 +67,38 @@ footer {
     color: white;
     text-align: center;
     padding: 20px;
+    position: sticky;
+    max-width: 100%;
+    
 }
-
+.card{
+    display: flex;
+    
+}
 footer h3 {
     color: #f7c600;
+}
+
+#bienvenida{
+    text-align: center;
+    font-family: "Quantico", serif;
+
+}
+
+#desc_bienvenida{
+    text-align: center;
+    font-size: large;
 }
 
 footer a {
     color: #ffffff;
     text-decoration: none;
+}
+
+ul{
+    list-style: none;
+}
+
+li{
+    list-style: none;
 }
