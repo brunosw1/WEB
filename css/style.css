@@ -21,12 +21,12 @@ body{
     min-height: 100vh
 }
 #boton{
-    position: relative;
-    top: 540px;
-    left: 470px;
+    position: absolute;
+    top: 720px;
+    left: 1380px;
 }
 #titulo_producto{
-    position: relative;
+    position: static;
     top: 81px;
     left: -127px;
     font-size: 50px;
@@ -34,9 +34,10 @@ body{
 }
 #precio{
     text-align: right;
-    position: relative;
-    top: 300px;
-    font-size: xxx-large;
+    position: absolute;
+    top: 469px;
+    right: 274px;
+    font-size: 101px;
 }
 
 .nav-item{
@@ -112,7 +113,7 @@ li{
 
 
 #titulo_nosotros {
-    text-align: left; /* Alinea el texto a la izquierda */
+    text-align: center; /* Alinea el texto al centro */
     margin: 0; /* Elimina márgenes adicionales */
     font-size: 2em; /* Tamaño del texto */
     font-weight: bold; /* Negrita */
@@ -120,7 +121,7 @@ li{
 }
 
 #Descripcion {
-    text-align: left; /* Alinea el párrafo a la izquierda */
+    text-align: center; /* Alinea el párrafo al centro */
     margin-top: 10px; /* Espaciado entre el título y el párrafo */
     line-height: 1.5; /* Mejora la legibilidad */
     font-size: 1em; /* Ajusta el tamaño del texto */
@@ -136,36 +137,39 @@ hr{
     
 }
 
-.titulo_nosotros2{
-    text-align: right; /* Alinea el texto a la izquierda */
+#titulo_nosotros2{
+    text-align: center; /* Alinea el texto a la izquierda */
     margin: 0; /* Elimina márgenes adicionales */
     font-size: 2em; /* Tamaño del texto */
     font-weight: bold; /* Negrita */
     font-family: "Audiowide", serif;
+    float: none;
 }
 
 #Descripcion2{
-    text-align: right; /* Alinea el párrafo a la izquierda */
+    text-align: center; /* Alinea el párrafo a la izquierda */
     margin-top: 10px; /* Espaciado entre el título y el párrafo */
     line-height: 1.5; /* Mejora la legibilidad */
     font-size: 1em; /* Ajusta el tamaño del texto */
     font-family: "Roboto", sans-serif; /* Fuente más legible para párrafos */
 }
 
-.Descripcion3{
-    text-align: right;
+#Descripcion3{
+    text-align: center;
     font-size: 1em; /* Ajusta el tamaño del texto */
     font-family: "Roboto", sans-serif;
 }
 
-.titulo_nosotros3{
+#titulo_nosotros3{
     float: left;
     font-size: 2em; /* Tamaño del texto */
     font-weight: bold; /* Negrita */
     font-family: "Audiowide", serif;
 }
 
-.imagen2{
+#imagen2{
     width: 350px;
-    float: right;
+    width: 350px;
+    position: relative;
+    left: 720px;
 }
