@@ -102,3 +102,70 @@ ul{
 li{
     list-style: none;
 }
+
+.container {
+    display: flex;
+    flex-direction: column; /* Asegura que los elementos se apilen verticalmente */
+    align-items: flex-start; /* Alinea los elementos a la izquierda */
+    padding: 20px; /* Espaciado interno opcional */
+}
+
+
+#titulo_nosotros {
+    text-align: left; /* Alinea el texto a la izquierda */
+    margin: 0; /* Elimina márgenes adicionales */
+    font-size: 2em; /* Tamaño del texto */
+    font-weight: bold; /* Negrita */
+    font-family: "Audiowide", serif; /* Usa una fuente personalizada */
+}
+
+#Descripcion {
+    text-align: left; /* Alinea el párrafo a la izquierda */
+    margin-top: 10px; /* Espaciado entre el título y el párrafo */
+    line-height: 1.5; /* Mejora la legibilidad */
+    font-size: 1em; /* Ajusta el tamaño del texto */
+    font-family: "Roboto", sans-serif; /* Fuente más legible para párrafos */
+}
+
+hr{
+    display: none;
+}
+
+.imagen1{
+    width: 350px;
+    
+}
+
+.titulo_nosotros2{
+    text-align: right; /* Alinea el texto a la izquierda */
+    margin: 0; /* Elimina márgenes adicionales */
+    font-size: 2em; /* Tamaño del texto */
+    font-weight: bold; /* Negrita */
+    font-family: "Audiowide", serif;
+}
+
+#Descripcion2{
+    text-align: right; /* Alinea el párrafo a la izquierda */
+    margin-top: 10px; /* Espaciado entre el título y el párrafo */
+    line-height: 1.5; /* Mejora la legibilidad */
+    font-size: 1em; /* Ajusta el tamaño del texto */
+    font-family: "Roboto", sans-serif; /* Fuente más legible para párrafos */
+}
+
+.Descripcion3{
+    text-align: right;
+    font-size: 1em; /* Ajusta el tamaño del texto */
+    font-family: "Roboto", sans-serif;
+}
+
+.titulo_nosotros3{
+    float: left;
+    font-size: 2em; /* Tamaño del texto */
+    font-weight: bold; /* Negrita */
+    font-family: "Audiowide", serif;
+}
+
+.imagen2{
+    width: 350px;
+    float: right;
+}
