@@ -173,3 +173,18 @@ hr{
     position: relative;
     left: 720px;
 }
+
+#logo_dc{
+    float: left;
+    width: 300px;
+}
+
+#logo_marvel{
+    align-self: center;
+    width: 300px;
+}
+
+#logo_manga{
+    float: right;
+    width: 300px;
+}
