@@ -3,10 +3,34 @@
 @import url('https://fonts.googleapis.com/css2?family=Audiowide&family=Quantico:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Wallpoet&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Barrio&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Unkempt:wght@400;700&display=swap');
 img{
     float: left;
 }
 
+#nav_registro{
+    color: beige;
+
+}
+#texto_form{
+    font-family: "Barrio", serif;
+    font-size: 25px;
+    color: white;
+}
+#texto_form_2{
+    font-family: "Unkempt", serif;
+    font-size: 18px;
+    color: white;
+}
+#confirm_registro{
+    color: orange;
+    size: 50px;
+    background-color: white;
+}
+#formulario{
+    background-color: red;
+}
 #titulo_pagina{
     font-family: "Audiowide", serif;
 }
