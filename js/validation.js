@@ -54,6 +54,18 @@ $().ready(function() {
             },
             email: "Introduzca un Correo Valido",
             agree: "Acepte nuestras Condiciones",
+            
+            rut: {
+                required: true,
+                minlength: 7, // Mínimo 7 caracteres
+                maxlength: 8, // Máximo 8 caracteres
+                digits: true // Solo números
+            },
+            dv: {
+                required: true,
+                maxlength: 1, // Máximo 1 carácter
+                pattern: "[0-9kK]" // Solo un número o las letras K/k
+            }
         },
         // Mostrar errores específicos cuando no pase la validación
         invalidHandler: function(event, validator) {
@@ -82,4 +94,46 @@ $().ready(function() {
         }
     });
 
+
+
+
+    //validacion rut
+
+    // Validar RUT con dígito verificador
+    function validarRutCompleto() {
+        const rut = $("#rut").val();
+        const dv = $("#dv").val();
+
+        if (!rut || !dv) return false;
+
+        let suma = 0;
+        let multiplicador = 2;
+
+        // Calcular el dígito verificador
+        for (let i = rut.length - 1; i >= 0; i--) {
+            suma += rut[i] * multiplicador;
+            multiplicador = multiplicador === 7 ? 2 : multiplicador + 1;
+        }
+
+        const resto = suma % 11;
+        const dvCalculado = resto === 0 ? '0' : resto === 1 ? 'k' : (11 - resto).toString();
+
+        return dv.toLowerCase() === dvCalculado;
+    }
+
+    // Agregar método personalizado de jQuery Validation para el RUT
+    $.validator.addMethod("validRut", function(value, element) {
+        return validarRutCompleto();
+    }, "El RUT ingresado no es válido.");
+
+    // Agregar validación del RUT completo
+    $("#signupForm").validate({
+        rules: {
+            rut: {
+                validRut: true
+            }
+        }
+    });
 });
+
+

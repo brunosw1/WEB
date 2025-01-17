@@ -12,6 +12,8 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Wallpoet&display=swap">
     <!-- JQuery -->
     <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <!-- JavaScript -->
+     <script type="text/JavaScript" src="js/single.js"></script>
     <title>Comic Superheroes</title>
 </head>
 <body>
@@ -61,33 +63,28 @@
     </header>
     
     <div class="container">
-        <h1 id="titulo_producto">HULK</h1>
-        <h1 id="precio">$9.990</h1>
-        <img src="img/producto-4.jpg" alt="foto del producto">
-        <!-- Button trigger modal -->
-    <button type="button" id="boton" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-        Agregar al Carrito
-    </button>
-    </div>
-    
-    <!-- Modal -->
-    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-            <h1 class="modal-title fs-5" id="exampleModalLabel">Añadido!!</h1>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-            Su producto ha sido añadido al Carro de compras
-            </div>
-            <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Entendido</button>
-            </div>
-        </div>
-        </div>
-    </div>
-    </div>
+      <div class="product">
+          <img src="img/producto-4.jpg" alt="foto del producto" class="img-fluid">
+          <h2>HULK</h2>
+          <p>Precio: $<span id="product-price" data-price="9990">9990</span></p>
+          <div class="quantity">
+              <label for="quantity">Cantidad:</label>
+              <input type="number" id="quantity" min="1" value="1">
+          </div>
+          <button id="add-to-cart" class="btn btn-primary">Agregar al Carrito</button>
+          <button id="remove-from-cart" class="btn btn-danger">Eliminar</button> 
+      </div>
+  
+      <div id="cart" class="mt-5 border p-3">
+          <h3>Carrito de Compras</h3>
+          <ul id="cart-items" class="list-group mb-3">
+          </ul>
+          <p><strong>Total (sin IVA):</strong> $<span id="subtotal">0</span></p>
+          <p><strong>IVA (19%):</strong> $<span id="iva">0</span></p>
+          <p><strong>Total con IVA:</strong> $<span id="total">0</span></p>
+      </div>
+  </div>
+
 
     <div class="accordion" id="accordionPanelsStayOpenExample">
         <div class="accordion-item">
@@ -135,4 +132,5 @@
       </div>
     
 </body>
+</html>
     
