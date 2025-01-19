@@ -12,6 +12,8 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Wallpoet&display=swap">
     <!-- JQuery -->
     <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <!-- JavaScript -->
+    <script src="js/catalogo.js"></script>
     <title>Comic Superheroes</title>
 </head>
 <body>
@@ -47,7 +49,12 @@
                   <li class="nav-item">
                     <a class="nav-link" href="nosotros.html">Sobre Nosotros</a>
                   </li>
-                  
+                  <li class="nav-item">
+                    <a class="nav-link" id="nav_registro" href="registro.html">REGISTRARSE</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" id="nav_registro" href="registro.html">INICIAR SESION</a>
+                  </li>
                 </ul>
               </div>
               <h1 id="titulo_pagina">Tienda Comics</h1>
@@ -55,59 +62,33 @@
           </nav>
         </header>
         <h1 id="titulo">Catalogo</h1>
-        <div class="row g-3">
-            <div class="col-md-2 col-6">
-                <div class="card" style="width: 18rem;">
-                    <img src="img/producto-1.jpg" class="card-img-top" alt="comic los vengadores">
-                    <div class="card-body">
-                      <h5 class="card-title"> Marvel:Los vengadores</h5>
-                      <p class="card-text">"Los Vengadores" es un cómic de Marvel que reúne a superhéroes como Iron Man, Capitán América, Thor, Hulk, y otros para enfrentar amenazas globales y cósmicas.</p>
-                      <a href="#" class="btn btn-primary">Ver Producto</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-2 col-6">
-                <div class="card" style="width: 18rem;">
-                    <img src="img/producto-2.jpg" class="card-img-top" alt="comic los vengadores">
-                    <div class="card-body">
-                      <h5 class="card-title"> El Hombre Araña</h5>
-                      <p class="card-text">El Hombre Araña es un superhéroe de Marvel, creado por Stan Lee y Steve Ditko, que lucha contra el crimen en Nueva York tras ser mordido por una araña radiactiva, adquiriendo habilidades especiales.</p>
-                      <a href="#" class="btn btn-primary">Ver Producto</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-2 col-6">
-                <div class="card" style="width: 18rem;">
-                    <img src="img/producto-3.jpg" class="card-img-top" alt="comic los vengadores">
-                    <div class="card-body">
-                      <h5 class="card-title"> Marvel:Guerras Secretas</h5>
-                      <p class="card-text">Guerras Secretas" es un cómic de Marvel en el que un grupo de héroes y villanos es transportado a un planeta lejano por el todopoderoso Beyonder, quien los enfrenta en una batalla épica por la supervivencia.</p>
-                      <a href="#" class="btn btn-primary">Ver Producto</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-2 col-6">
-                <div class="card" style="width: 18rem;">
-                    <img src="img/producto-4.jpg" class="card-img-top" alt="comic los vengadores">
-                    <div class="card-body">
-                      <h5 class="card-title">HULK</h5>
-                      <p class="card-text">Hulk es un superhéroe de Marvel, alter ego de Bruce Banner, un científico que, tras exponerse a radiación gamma, se transforma en un ser de fuerza descomunal cuando se enfurece.</p>
-                      <a href="single.html" class="btn btn-primary">Ver Producto</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-2 col-6">
-                <div class="card" style="width: 18rem;">
-                    <img src="img/prodcuto-5.jpg" class="card-img-top" alt="comic los vengadores">
-                    <div class="card-body">
-                      <h5 class="card-title">Marvel:Guardianes de la Galaxia</h5>
-                      <p class="card-text">Guardianes de la Galaxia" es un equipo de héroes cósmicos de Marvel, formado por personajes como Star-Lord, Gamora, Drax, Rocket y Groot, que luchan juntos para proteger el universo de amenazas intergalácticas.</p>
-                      <a href="#" class="btn btn-primary">Ver Producto</a>
-                    </div>
-                </div>
-            </div>
+        <div class="row g-3" id="cardsContainer">
+            
         </div>
-        
+        <!-- Pagination -->
+        <nav aria-label="Page navigation example">
+          <ul class="pagination justify-content-center" id="paginationContainer">
+            
+          </ul>
+        </nav>
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Añadido!</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                Producto añadido al carro
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Entendido</button>
+              </div>
+            </div>
+          </div>
+        </div>
         <footer role="contentinfo">
         <h3>Contacto:</h3>
         <ul>

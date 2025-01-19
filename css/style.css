@@ -13,6 +13,11 @@ img{
     color: beige;
 
 }
+
+#cardPrice{
+    color: green;
+    font-size: larger;
+}
 #texto_form{
     font-family: "Barrio", serif;
     font-size: 25px;
