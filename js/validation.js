@@ -32,29 +32,8 @@ $().ready(function() {
             topic: {
                 required: "#newsletter:checked"
             },
-            agree: "required"
-        },
-        messages: {
-            firstname: {
-                required: "Por favor Introduzca su Nombre",
-                minlength: "Su Nombre tiene que ser de Minimo 2 caracteres"
-            },
-            lastname: {
-                required: "Por favor Introduzca su Apellido",
-                minlength: "Su Apellido tiene que ser de Minimo 2 caracteres"
-            },
-            password: {
-                required: "Por favor Introduzca una Contraseña",
-                minlength: "Su contraseña debe tener minimo 5 caracteres"
-            },
-            confirm_password: {
-                required: "Por favor Introduzca una Contraseña",
-                minlength: "Su contraseña debe tener minimo 5 caracteres",
-                equalTo: "Su contraseña debe ser igual a la de arriba"
-            },
-            email: "Introduzca un Correo Valido",
-            agree: "Acepte nuestras Condiciones",
-            
+            agree: "required",
+
             rut: {
                 required: true,
                 minlength: 7, // Mínimo 7 caracteres
@@ -67,17 +46,45 @@ $().ready(function() {
                 pattern: "[0-9kK]" // Solo un número o las letras K/k
             }
         },
-        // Mostrar errores específicos cuando no pase la validación
+        messages: {
+            firstname: {
+                required: "-Por favor Introduzca su Nombre",
+                minlength: "Su Nombre tiene que ser de Minimo 2 caracteres"
+            },
+            lastname: {
+                required: "-Por favor Introduzca su Apellido",
+                minlength: "-Su Apellido tiene que ser de Minimo 2 caracteres"
+            },
+            password: {
+                required: "-Por favor Introduzca una Contraseña",
+                minlength: "-Su contraseña debe tener minimo 5 caracteres"
+            },
+            confirm_password: {
+                required: "-Por favor Introduzca una Contraseña",
+                minlength: "-Su contraseña debe tener minimo 5 caracteres",
+                equalTo: "-Su contraseña debe ser igual a la de arriba"
+            },
+            email: "-Introduzca un Correo Valido",
+            agree: "-Acepte nuestras Condiciones",
+            
+            rut: {
+                required: "-Por favor Introduzca su Rut",
+                minlength: "-Mínimo 7 caracteres",
+                maxlength: "-Máximo 8 caracteres", 
+                digits: "-Solo números"
+            },
+            dv: {
+                required: "-Por favor Introduzca su dv",
+                maxlength: "-Máximo 1 carácter", // Máximo 1 carácter
+                pattern: "-Solo un número o las letras K/k" 
+            }
+        },
         invalidHandler: function(event, validator) {
-            // Limpiar cualquier mensaje de error previo
             $('#error-list').empty();
             
-            // Si hay errores, mostrarlos en el contenedor
             if (validator.numberOfInvalids()) {
-                // Mostrar el contenedor de errores
                 $('#error-message').show();
                 
-                // Recorrer los errores y agregarlos a la lista
                 $.each(validator.invalid, function(fieldName, message) {
                     $('#error-list').append('<li>' + message + '</li>');
                 });
@@ -85,7 +92,6 @@ $().ready(function() {
         }
     });
 
-    // propose username by combining first- and lastname
     $("#username").focus(function() {
         var firstname = $("#firstname").val();
         var lastname = $("#lastname").val();
