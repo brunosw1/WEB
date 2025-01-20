@@ -39,7 +39,10 @@ img{
 #titulo_pagina{
     font-family: "Audiowide", serif;
 }
-
+#carrito{
+    width: 50px;
+    margin-right: 34px;
+}
 h1{
     float: right;
     margin-top: 19px;

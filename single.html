@@ -13,7 +13,7 @@
     <!-- JQuery -->
     <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
     <!-- JavaScript -->
-     <script type="text/JavaScript" src="js/single.js"></script>
+    <script type="text/JavaScript" src="js/single.js"></script>
     <title>Comic Superheroes</title>
 </head>
 <body>
@@ -57,80 +57,19 @@
                     </li>
                   </ul>
               </div>
+              <a href="carrito.html">
+                <img id="carrito" src="img/3144456.png"  alt="imagen de carrito">
+              </a>
               <h1 id="titulo_pagina">Tienda Comics</h1>
             </div>
           </nav>
     </header>
     
     <div class="container">
-      <div class="product">
-          <img src="img/producto-4.jpg" alt="foto del producto" class="img-fluid">
-          <h2>HULK</h2>
-          <p>Precio: $<span id="product-price" data-price="9990">9990</span></p>
-          <div class="quantity">
-              <label for="quantity">Cantidad:</label>
-              <input type="number" id="quantity" min="1" value="1">
-          </div>
-          <button id="add-to-cart" class="btn btn-primary">Agregar al Carrito</button>
-          <button id="remove-from-cart" class="btn btn-danger">Eliminar</button> 
-      </div>
-  
-      <div id="cart" class="mt-5 border p-3">
-          <h3>Carrito de Compras</h3>
-          <ul id="cart-items" class="list-group mb-3">
-          </ul>
-          <p><strong>Total (sin IVA):</strong> $<span id="subtotal">0</span></p>
-          <p><strong>IVA (19%):</strong> $<span id="iva">0</span></p>
-          <p><strong>Total con IVA:</strong> $<span id="total">0</span></p>
-      </div>
-  </div>
-
-
-    <div class="accordion" id="accordionPanelsStayOpenExample">
-        <div class="accordion-item">
-          <h2 class="accordion-header">
-            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
-              Descripcion
-            </button>
-          </h2>
-          <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show">
-            <div class="accordion-body">
-              <strong>El increible HULK:</strong> "Hulk" es un cómic de superhéroes creado por el guionista Stan Lee y el dibujante Jack Kirby, publicado por Marvel Comics. El personaje principal, Bruce Banner, es un científico que, tras ser expuesto a rayos gamma, se transforma en el monstruoso y poderoso Hulk cuando experimenta estrés o ira. Mientras Hulk representa una fuerza descontrolada y destructiva, Bruce Banner busca controlar su alter ego y luchar contra las consecuencias de su propia creación. El cómic explora temas como la dualidad de la personalidad, la lucha interna y la aceptación, mientras Hulk enfrenta tanto amenazas externas como sus propios conflictos internos. A lo largo de los años, Hulk se ha convertido en uno de los personajes más icónicos de Marvel.
-            </div>
-          </div>
-        </div>
-        <div class="accordion-item">
-          <h2 class="accordion-header">
-            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false" aria-controls="panelsStayOpen-collapseTwo">
-              Ficha Descriptiva
-            </button>
-          </h2>
-          <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse">
-            <div class="accordion-body">
-              <strong>Creador/es:</strong> Stan Lee, Jack Kirby
-              <br>
-              <strong>Editorial:</strong> Marvel comics
-              <br>
-              <strong>Fecha de Lanzamiento:</strong>1962
-            </div>
-          </div>
-        </div>
-        <div class="accordion-item">
-          <h2 class="accordion-header">
-            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false" aria-controls="panelsStayOpen-collapseThree">
-              Reseñas
-            </button>
-          </h2>
-          <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse">
-            <div class="accordion-body">
-            <strong>The Verge:</strong> The Verge ha comentado sobre cómo Hulk es una de las historias más complejas y fascinantes de Marvel, destacando la dualidad del personaje de Bruce Banner y Hulk. Se señala que la serie no solo explora la fuerza desmesurada del monstruo verde, sino también la profunda lucha interna del protagonista, quien busca controlar su transformación y las consecuencias de su poder descontrolado. El cómic se ha destacado por su enfoque psicológico, donde la ira de Hulk se convierte en una metáfora de los conflictos internos del ser humano.
-            <br>
-            <strong>IGN:</strong>IGN, al analizar los arcos narrativos más importantes del cómic, destaca cómo los primeros números de Hulk introducen la desesperación de Bruce Banner por lidiar con su monstruosa transformación, pero también cómo, con el tiempo, el personaje de Hulk se fue diferenciando de otros héroes de Marvel por su conflicto constante entre ser una amenaza para la humanidad o un protector. La reseña recalca que el cómic aborda temas de aislamiento, aceptación y el miedo a lo desconocido, lo que lo convierte en una de las series más introspectivas y filosóficas de los cómics de superhéroes.
-            </div>
-          </div>
-        </div>
-      </div>
-    
+      <h1>Detalle del Cómic</h1>
+    <div class="comic-detail" id="comic-detail">
+        <p>Cargando...</p>
+    </div>
 </body>
 </html>
     

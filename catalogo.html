@@ -62,9 +62,18 @@
           </nav>
         </header>
         <h1 id="titulo">Catalogo</h1>
+        <!-- contenido del catalogo -->
         <div class="row g-3" id="cardsContainer">
-            
+        
         </div>
+        <!-- carrito -->
+        <div id="cartContainer">
+          <h3>Carrito</h3>
+          <ul id="cartItems"></ul>
+          <p>Total: $<span id="totalPrice">0.00</span></p>
+          <button id="clearCart" class="btn btn-danger">Limpiar carrito</button>
+      </div>
+
         <!-- Pagination -->
         <nav aria-label="Page navigation example">
           <ul class="pagination justify-content-center" id="paginationContainer">
@@ -84,7 +93,7 @@
               </div>
               <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Entendido</button>
+                <button type="button" data-bs-dismiss="modal" class="btn btn-primary">Entendido</button>
               </div>
             </div>
           </div>
