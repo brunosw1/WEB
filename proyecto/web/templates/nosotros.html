@@ -29,7 +29,7 @@
                     Categoria
                   </a>
                   <ul class="dropdown-menu">
-                      <li><a class="dropdown-item" href="#">Productos</a></li>
+                      <li><a class="dropdown-item" href="{% url 'productos' %}">Productos</a></li>
                       <li><a class="dropdown-item" href="#">Mangas</a></li>
                       <li><a class="dropdown-item" href="#">Comics</a></li>
                       <li><hr class="dropdown-divider"></li>
@@ -49,18 +49,29 @@
                 <li class="nav-item">
                   <a class="nav-link" href="{% url 'nosotros' %}">Sobre Nosotros</a>
                 </li>
-                <li class="nav-item">
-                  <a class="nav-link" id="nav_registro" href="{% url 'registro' %}">REGISTRARSE</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" id="nav_registro" href="registro.html">INICIAR SESION</a>
-                </li>
+                {% if user.is_authenticated %}
+                  <!-- Si el usuario está autenticado, mostrar su nombre -->
+                  <li class="nav-item">
+                      <a class="nav-link" href="">Hola, {{ user.username }}</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link" href="{% url 'logout' %}">Cerrar sesión</a>
+                  </li>
+              {% else %}
+                  <!-- Si el usuario no está autenticado, mostrar las opciones de registro e inicio de sesión -->
+                  <li class="nav-item">
+                      <a class="nav-link" href="{% url 'usuarios_create' %}">REGISTRARSE</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link" href="{% url 'login' %}">INICIAR SESION</a>
+                  </li>
+              {% endif %}
               </ul>
             </div>
             <a href="carrito.html">
               <img id="carrito" src="{% static 'img/3144456.png' %}"  alt="imagen de carrito">
             </a>
-            <h1 id="titulo_pagina">Tienda Comics</h1>
+            <h1 id="titulo_pagina">Comic Superheroes</h1>
           </div>
         </nav>
 

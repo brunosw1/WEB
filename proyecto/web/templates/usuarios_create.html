@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.5/dist/jquery.validate.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/crypto-js@4.1.1/core.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/crypto-js@4.1.1/sha256.min.js"></script>
+<script src="{% static 'js/validation_pass.js' %}"></script>
+<div class="container mt-4">
+    <h1 class="titulo_form">Registrarse</h1>
+    <form id="usuarioForm" method="POST" action="{% url 'usuarios_create' %}" autocomplete="on">
+        {% csrf_token %}
+        <fieldset>
+        
+            <label id="texto_form" for="rut">RUT:</label>
+            <input type="text" id="rut" name="rut" required>
+            <label id="texto_form" for="dv">DV:</label>
+            <input type="text" id="dv" name="dv" required>
+    
+            <br>
+    
+            <label id="texto_form" for="firstname">Nombre:</label>
+            <input type="text" id="firstname" name="firstname" required>
+            
+            <label id="texto_form" for="lastname">Apellido:</label>
+            <input type="text" id="lastname" name="lastname" required>
+    
+            <br>
+    
+            <label id="texto_form" for="email">Correo electrónico:</label>
+            <input type="email" id="email" name="email">
+    
+            <br>
+    
+            <label id="texto_form" for="password">Contraseña:</label>
+            <input type="password" id="password" name="password" required>
+    
+            <label for="confirm_password">Confirmar Contraseña:</label>
+            <input type="password" id="confirm_password" name="confirm_password" required>
+    
+            <br>
+            <p>
+                <label id="texto_form" for="agree">Acepta nuestro Termino y Condiciones</label>
+                <input type="checkbox" class="checkbox" id="agree" name="agree" autocomplete="off">
+            </p>
+            <p>
+                <label id="texto_form" for="newsletter">Me gustaria recibir notificaciones sobre nueva llegada de comics o ofertas</label>
+                <input type="checkbox" class="checkbox" id="newsletter" name="newsletter" autocomplete="off">
+            </p>
+            <div class="text-center">
+                <button id="confirm_registro" type="submit" class="btn btn-primary btn-lg">REGISTRARSE</button>
+            </div>
+        
+            <!-- Contenedor para el mensaje de error -->
+            <div id="error-message" style="display: none; color: red; padding: 10px; border: 1px solid red; background-color: #f8d7da;">
+                <strong>Error:</strong>
+            <ul id="error-list"></ul>
+            </div>
+    
+        </fieldset>
+    </form>
+</div>
+{% endblock %}

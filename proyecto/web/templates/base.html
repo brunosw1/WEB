@@ -1,0 +1,98 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- JQuery -->
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}"> 
+    
+    <!-- Fuentes de letra -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Audiowide&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Audiowide&family=Quantico:ital,wght@0,400;0,700;1,400;1,700&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Wallpoet&display=swap">
+    
+    
+    
+    <title>{% block title %}Comic Superheroes{% endblock %}</title>
+</head>
+<body>
+    <header> 
+        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+            <div class="container-fluid">
+                <img src="{% static 'img/logo.jpg' %}" id="logo" width="150" height="100" alt="logo de la pagina">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarNav">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      Categoría
+                    </a>
+                    <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" href="{% url 'productos' %}">Productos</a></li>
+                      <li><a class="dropdown-item" href="#">Mangas</a></li>
+                      <li><a class="dropdown-item" href="#">Comics</a></li>
+                      <li><hr class="dropdown-divider"></li>
+                      <li><a class="dropdown-item" href="#">Ofertas y Packs</a></li>
+                    </ul>
+                </li>
+                <ul class="navbar-nav">
+                  <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="{% url 'inicio' %}">Inicio</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="{% url 'prox_lanzamiento' %}">Próx. Lanzamientos</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="{% url 'tiendas' %}">¿Dónde Comprar?</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="{% url 'nosotros' %}">Sobre Nosotros</a>
+                  </li>
+                {% if user.is_authenticated %}
+                  <!-- Si el usuario está autenticado, mostrar su nombre -->
+                  <li class="nav-item">
+                      <a class="nav-link" href="">Hola, {{ user.username }}</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link" href="{% url 'logout' %}">Cerrar sesión</a>
+                  </li>
+                {% else %}
+                  <!-- Si el usuario no está autenticado, mostrar las opciones de registro e inicio de sesión -->
+                  <li class="nav-item">
+                      <a class="nav-link" href="{% url 'usuarios_create' %}">REGISTRARSE</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link" href="{% url 'login' %}">INICIAR SESION</a>
+                  </li>
+                {% endif %}
+              </ul>
+              </div>
+              <a href="{% url 'carrito' %}">
+                <img id="carrito" src="{% static 'img/3144456.png' %}"  alt="imagen de carrito">
+              </a>
+              <h1 id="titulo_pagina">Comic Superheroes</h1>
+            </div>
+          </nav>
+    </header>
+
+    <!-- Contenido dinámico -->
+    <main class="container mt-4">
+        {% block content %}
+        
+        {% endblock %}
+    </main>
+
+    <footer class="text-center mt-4">
+        <p>© 2025 Comic Superheroes. Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% block title %}Editar Usuario{% endblock %}
+{% block content %}
+<div class="container mt-4">
+    <h2>Editar Usuario</h2>
+    <form id="usuarioForm" method="POST" action="{% url 'usuarios_update' usuario.id %}">
+        {% csrf_token %} <!-- se usa para darle seguridad a  la trasnferencia de datos -->
+        <div class="mb-3">
+            <label for="nombre" class="form-label">Nombre</label>
+            <input type="text" class="form-control" id="nombre" name="nombre" value="{{ usuario.nombre }}" required>
+        </div>
+        <div class="mb-3">
+            <label for="email" class="form-label">Email</label>
+            <input type="email" class="form-control" id="email" name="email" value="{{ usuario.email }}" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Guardar Cambios</button>
+    </form>
+</div>
+<script>
+document.getElementById('usuarioForm').addEventListener('submit', function(event) {
+    const nombre = document.getElementById('nombre').value;
+    const email = document.getElementById('email').value;
+
+    if (!nombre || !email) {
+        alert('Por favor, completa todos los campos.');
+        event.preventDefault();
+    } else if (!email.includes('@')) {
+        alert('Por favor, ingresa un correo válido.');
+        event.preventDefault();
+    }
+});
+</script>
+{% endblock %}
